@@ -4,10 +4,10 @@ import {ItemService} from "../service/item.service";
 
 @Component({
   selector: 'app-create-item',
-  templateUrl: './create-item.component.html',
-  styleUrls: ['./create-item.component.css']
+  templateUrl: './item-create.component.html',
+  styleUrls: ['./item-create.component.css']
 })
-export class CreateItemComponent {
+export class ItemCreateComponent {
 
   newItemForm: FormGroup<any> = this.formBuilder.group({
     name: '',
@@ -16,7 +16,8 @@ export class CreateItemComponent {
     amountStock: ''
   })
 
-  constructor(public itemService: ItemService ,private formBuilder: FormBuilder) {
+  constructor(public itemService: ItemService,
+              private formBuilder: FormBuilder) {
   }
 
   onSubmit(): void {

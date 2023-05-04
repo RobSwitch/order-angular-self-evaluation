@@ -12,7 +12,9 @@ import {ItemService} from "./service/item.service";
 import { HttpClientModule } from '@angular/common/http';
 import { ItemSearchFilterPipe } from './item-search-filter.pipe';
 import {FormsModule, ReactiveFormsModule} from "@angular/forms";
-import { CreateItemComponent } from './create-item/create-item.component';
+import { ItemCreateComponent } from './item-create/item-create.component';
+import { ItemDetailComponent } from './item-detail/item-detail.component';
+import { ItemUpdateComponent } from './item-update/item-update.component';
 
 @NgModule({
   declarations: [
@@ -21,7 +23,9 @@ import { CreateItemComponent } from './create-item/create-item.component';
     HeaderComponent,
     FooterComponent,
     ItemSearchFilterPipe,
-    CreateItemComponent
+    ItemCreateComponent,
+    ItemDetailComponent,
+    ItemUpdateComponent
   ],
   imports: [
     BrowserModule,

@@ -19,6 +19,13 @@ export class ItemService {
     return this._http.get<Item[]>(this._urlItems);
   }
 
+  getItemById(id: string) :Observable<any> {
+    return this._http.get(`${this._urlItems}/${id}`)
+  }
+
+  updateItem(id: string, item: Item) {
+    return this._http.put(`${this._urlItems}/${id}`, item )
+  }
   postItem(item: Item) {
     return this._http.post(this._urlItems, item);
   }

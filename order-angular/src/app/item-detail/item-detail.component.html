@@ -1,0 +1,39 @@
+<div class="container-fluid" *ngIf="_selectedItem">
+  <hr>
+  <div class="d-flex flex-row justify-content-between">
+    <h1>Item <span class="text-secondary">{{_selectedItem.id}}</span></h1>
+
+  </div>
+  <hr>
+</div>
+<div class="container-fluid">
+  <form>
+    <div class="form-group">
+      <label for="name">Name</label>
+      <input type="text" class="form-control bg-light" id="name" placeholder="{{_selectedItem.name}}" readonly>
+      <small id="nameHelp" class="form-text text-muted"></small>
+    </div>
+    <div class="form-group">
+      <label for="description">Description</label>
+      <textarea class="form-control bg-light" id="description" rows="5" placeholder="{{_selectedItem.description}}" readonly></textarea>
+    </div>
+    <div class="row flex-row d-flex">
+      <div class="form-group col-auto">
+        <label class="sr-only" for="price">Price</label>
+        <div class="input-group">
+          <div class="input-group-prepend">
+            <div class="input-group-text">€</div>
+          </div>
+          <input type="text" class="form-control bg-light" id="price" placeholder="{{_selectedItem.price}}">
+        </div>
+        <a routerLink="/item-update/{{_selectedItem.id}}" type="submit" class="btn btn-lg btn-primary my-2 col-auto">Edit</a>
+      </div>
+      <div class="form-group col-auto">
+        <label for="stock-amount">Amount of Stock</label>
+        <input type="text" class="form-control bg-light" id="stock-amount" placeholder="{{_selectedItem.amountOfStock}}" readonly>
+        <a routerLink="" class="btn btn-lg btn-light my-2">Back</a>
+      </div>
+
+    </div>
+  </form>
+</div>
