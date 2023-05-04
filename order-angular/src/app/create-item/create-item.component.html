@@ -1,0 +1,38 @@
+<div class="container-fluid">
+  <hr>
+  <div class="d-flex flex-row justify-content-between">
+    <h1>Create Item</h1>
+  </div>
+  <hr>
+</div>
+<div class="container-fluid">
+  <form [formGroup]="newItemForm" (ngSubmit)="onSubmit()">
+    <div class="form-group">
+      <label for="name">Name</label>
+      <input type="text" class="form-control" id="name" placeholder="" formControlName="name">
+      <small id="nameHelp" class="form-text text-muted"></small>
+    </div>
+    <div class="form-group">
+      <label for="description">Description</label>
+      <textarea class="form-control" id="description" rows="5" formControlName="description"></textarea>
+    </div>
+    <div class="row flex-row d-flex">
+    <div class="form-group col-auto">
+      <label class="sr-only" for="price">Price</label>
+      <div class="input-group">
+        <div class="input-group-prepend">
+          <div class="input-group-text">€</div>
+        </div>
+        <input type="text" class="form-control" id="price" placeholder="" formControlName="price">
+      </div>
+      <button type="submit" class="btn btn-lg btn-success my-2 col-auto">Create</button>
+    </div>
+    <div class="form-group col-auto">
+      <label for="stock-amount">Amount of Stock</label>
+      <input type="text" class="form-control" id="stock-amount" formControlName="stockAmount">
+      <a routerLink="" class="btn btn-lg btn-light my-2">Cancel</a>
+    </div>
+
+    </div>
+  </form>
+</div>
