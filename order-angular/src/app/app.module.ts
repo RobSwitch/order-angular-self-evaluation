@@ -9,13 +9,14 @@ import {NgOptimizedImage} from "@angular/common";
 import {FooterComponent} from './footer/footer.component';
 import {ItemService} from "./service/item.service";
 import {HttpClientModule} from '@angular/common/http';
-import {ItemSearchFilterPipe} from './item-search-filter.pipe';
+import {ItemSearchFilterPipe} from './filter/item-search-filter.pipe';
 import {FormsModule, ReactiveFormsModule} from "@angular/forms";
 import {ItemCreateComponent} from './item-create/item-create.component';
 import {ItemDetailComponent} from './item-detail/item-detail.component';
 import {ItemUpdateComponent} from './item-update/item-update.component';
 import {CustomerOverviewComponent} from './customer-overview/customer-overview.component';
-import { CustomerSearchFilterPipe } from './customer-search-filter.pipe';
+import { CustomerSearchFilterPipe } from './filter/customer-search-filter.pipe';
+import { CustomerCreateComponent } from './customer-create/customer-create.component';
 
 @NgModule({
   declarations: [
@@ -28,7 +29,8 @@ import { CustomerSearchFilterPipe } from './customer-search-filter.pipe';
     ItemDetailComponent,
     ItemUpdateComponent,
     CustomerOverviewComponent,
-    CustomerSearchFilterPipe
+    CustomerSearchFilterPipe,
+    CustomerCreateComponent
   ],
   imports: [
     BrowserModule,
