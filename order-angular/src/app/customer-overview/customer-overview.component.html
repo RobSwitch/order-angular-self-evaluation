@@ -1,0 +1,38 @@
+
+<div class="container">
+  <hr>
+  <div class="d-flex flex-row justify-content-between">
+    <h1>Customers</h1>
+    <div>
+      <input id="name" name="name" class="form-control" placeholder="Filter by lastname ..." [(ngModel)]="searchText">
+
+    </div>
+  </div>
+  <hr>
+</div>
+<div class="container" >
+  <table class="table">
+    <thead>
+    <tr>
+      <th scope="col">ID</th>
+      <th scope="col">FIRSTNAME</th>
+      <th scope="col">LASTNAME</th>
+      <th scope="col" class="text-center"><a routerLink="" class="btn btn-success ">NEW CUSTOMER</a></th>
+
+    </tr>
+    </thead>
+    <tbody *ngFor="let customer of customersArray | customerSearchFilter: searchText">
+    <tr>
+      <th scope="row">{{customer.id}}</th>
+      <td>{{customer.firstname}}</td>
+      <td>{{customer.lastname}}</td>
+      <td>
+        <div class="d-flex flex-row justify-content-center">
+        <a class="btn btn-light mx-2">VIEW</a>
+        <a class="btn btn-info mx-2">EDIT</a>
+        </div>
+      </td>
+    </tr>
+    </tbody>
+  </table>
+</div>

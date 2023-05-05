@@ -1,5 +1,5 @@
 
-<div class="container-fluid">
+<div class="container">
   <hr>
   <div class="d-flex flex-row justify-content-between">
     <h1>Items</h1>
@@ -9,8 +9,8 @@
   </div>
   <hr>
 </div>
-<div class="container-fluid d-flex flex-row" >
-  <div class="row">
+<div class="container d-flex flex-row" >
+  <div class="row justify-content-between">
     <div class="col-auto" *ngFor="let item of itemsArray | itemSearchFilter: searchText">
 
       <div class="card">

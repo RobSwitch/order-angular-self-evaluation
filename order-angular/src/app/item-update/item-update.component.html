@@ -1,22 +1,22 @@
-<div class="container-fluid" *ngIf="_selectedItem">
+<div class="container" *ngIf="_selectedItem">
   <hr>
   <div class="d-flex flex-row justify-content-between">
-    <h1>Create Item</h1>
+    <h1>Edit item</h1>
   </div>
   <hr>
 </div>
-<div class="container-fluid">
+<div class="container">
   <form [formGroup]="updateItemForm" (ngSubmit)="onSubmit()">
     <div class="form-group">
       <label for="name">Name</label>
       <input type="text" class="form-control" id="name"
-             placeholder="{{_selectedItem.name}}" formControlName="name">
+             [value]="_selectedItem?.name" formControlName="name">
       <small id="nameHelp" class="form-text text-muted"></small>
     </div>
     <div class="form-group">
       <label for="description">Description</label>
       <textarea class="form-control" id="description" rows="5"
-                placeholder="{{_selectedItem.description}}" formControlName="description"></textarea>
+                [value]="_selectedItem?.description" formControlName="description"></textarea>
     </div>
     <div class="row flex-row d-flex">
       <div class="form-group col-auto">
@@ -26,17 +26,25 @@
             <div class="input-group-text">€</div>
           </div>
           <input type="text" class="form-control" id="price"
-                 placeholder="{{_selectedItem.price}}" formControlName="price">
+                 [value]="_selectedItem?.price" formControlName="price">
         </div>
-        <button type="submit" class="btn btn-lg btn-success my-2 col-auto">Update</button>
+
       </div>
       <div class="form-group col-auto">
-        <label for="stock-amount">Amount of Stock</label>
-        <input type="text" class="form-control" id="stock-amount"
-               placeholder="{{_selectedItem.amountOfStock}}" formControlName="stockAmount">
-        <a routerLink="/item-detail/{{_selectedItem.id}}" class="btn btn-lg btn-light my-2">Cancel</a>
-      </div>
+        <label for="amountOfStock">Amount of Stock</label>
+        <input type="text" class="form-control" id="amountOfStock"
+               [value]="_selectedItem?.amountOfStock" formControlName="amountOfStock">
 
+      </div>
+      <div class="row d-flex flex-row">
+      <div class="col-auto my-2" >
+      <button type="submit" class="btn btn-lg btn-success col-auto">Update</button>
+
+      </div>
+      <div class="col-auto my-2">
+        <a routerLink="/item-detail/{{_selectedItem.id}}" class="btn btn-lg btn-light ">Cancel</a>
+      </div>
+      </div>
     </div>
   </form>
 </div>
